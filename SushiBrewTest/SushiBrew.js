@@ -31,16 +31,16 @@ var charList = [];
 
 var choices = [];
 var bluffs = [];
-function isUnique(charName){
+function isUnique(char){
   window.alert(choices);
   for(j=0;j++;j<choices.length){
-    if (choices[j].name == charName){
+    if (choices[j].name == char.name){
       return false;
     }
   }
   window.alert(bluffs);
   for(j=0;j++;j<bluffs.length){
-    if (bluffs[j] == charName){
+    if (bluffs[j] == char.name){
       return false;
     }
   }
