@@ -23,7 +23,7 @@ class Character {
     this.babysitting = false;
   }
   toString(){
-    return this.name;
+    return this.actually ? this.actually+"/"this.name : this.babysitting ? this.name+"/"+this.babysitting : this.name;
   }
 }
 
