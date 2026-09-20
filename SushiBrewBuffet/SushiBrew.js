@@ -280,13 +280,13 @@ async function startDraft(){
       while (true){
         char2 = randomChar([100,0,0,0],currentCount);
         if (char2.name != char1.name){
-          continue
+          break;
         }
       }
       while (true){
         char3 = randomChar([100,0,0,0],currentCount);
         if (char3.name != char2.name && char3.name != char1.name){
-          continue
+          break;
         }
       }
     }else if (Nocker){
@@ -294,13 +294,13 @@ async function startDraft(){
       while (true){
         char2 = randomChar([0,0,100,0],currentCount);
         if (char2.name != char1.name){
-          continue
+          break;
         }
       }
       while (true){
         char3 = randomChar([0,0,100,0],currentCount);
         if (char3.name != char2.name && char3.name != char1.name){
-          continue
+          break;
         }
       }
     }
