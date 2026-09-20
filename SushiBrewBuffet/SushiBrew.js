@@ -27,7 +27,7 @@ class Character {
   }
 }
 
-var charList;
+var charList = [];
 
 function randomChar(typeCount,currentCount){
   while(true){
