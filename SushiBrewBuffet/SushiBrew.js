@@ -32,6 +32,7 @@ var charList = [];
 function randomChar(typeCount,currentCount){
   while(true){
       var num = math.floor(math.random()*charList.length);
+      window.alert(num);
       var out = charList[num];
       if (out.setup){
         if (out.name == "Faerie"){
