@@ -484,6 +484,21 @@ async function startDraft(){
       players--;
       nextButton = false;
       document.getElementById("nextButton").innerHTML = "";
+      if (oMod[0] == -1 && typeCount[1] < 1){
+        oMod[0] = 1;
+      }
+      if (oMod){
+        document.getElementById("nextButton").innerHTML = "The "+currentChar.name+" has been chosen! Choose the O-Mod."+oMod[0]==1?" (Due to the current number of Outsiders, -1 is not avaliable)":"";
+        document.getElementById("char1").innerHTML = oMod[0]>=0 ? "+" : ""+Mod[0].toString()+" Outsiders";
+        document.getElementById("char2").innerHTML = "+"+oMod[1].toString()+" Outsiders";
+        while (!charButton || charButton==3){
+        await new Promise(r => setTimeout(r, 1000));
+        }
+        typeCount[1]+=oMod[charButton-1];
+        typeCount[0]-=oMod[charButton-1]
+        document.getElementById("char1").innerHTML = "";
+        document.getElementById("char1").innerHTML = "";
+      }
     }
   }
   //Illusionist, Lunger(Second), Hannibal(Second)
