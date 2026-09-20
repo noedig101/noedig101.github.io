@@ -32,12 +32,13 @@ var charList = [];
 var choices = [];
 var bluffs = [];
 function isUnique(charName){
-  window.alert("isUnique started");
+  window.alert(choices);
   for(j=0;j++;j<choices.length){
     if (choices[j].name == charName){
       return false;
     }
   }
+  window.alert(bluffs);
   for(j=0;j++;j<bluffs.length){
     if (bluffs[j] == charName){
       return false;
