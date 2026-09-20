@@ -263,15 +263,17 @@ async function startDraft(){
     window.alert("nextButton")
     if (!(Owl || Nocker)){
       char1 = randomChar(typeCount,currentCount);
-      window.alert("Returned!");
+      window.alert("Returned! 1");
       while (true){
         char2 = randomChar(typeCount,currentCount);
+        window.alert("Returned! 2");
         if (char2.name != char1.name){
           break;
         }
       }
       while (true){
         char3 = randomChar(typeCount,currentCount);
+        window.alert("Returned! 3");
         if (char3.name != char2.name && char3.name != char1.name){
           break;
         }
