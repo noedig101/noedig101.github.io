@@ -13,13 +13,17 @@ function decPlayer(){
 };
 
 class Character {
-  var actually = None;
+  var actually = false;
+  var babysitting = false;
   constructor(name, type, ability, setup = false, jinxes = false){
     this.name = name;
     this.team = type;
     this.ability = ability;
     this.setup = setup;
     this.jinxes = jinxes;
+  }
+  toString(){
+    return this.name;
   }
 }
 
@@ -55,25 +59,23 @@ function randomChar(typeCount,currentCount){
   return out;
 };
 
-nextButton = false;
-button1 = false;
-button2 = false;
-button3 = false;
+var nextButton = false;
+var charButton = false;
 function nextButtonPressed(){
-  nextButton = true
+  nextButton = true;
 };
 function button1Pressed(){
-  button1 = true
+  charButton = 1;
 };
 function button2Pressed(){
-  button2 = true
+  charButton = 2;
 };
-function button2Pressed(){
-  button1 = true
+function button3Pressed(){
+  charButton = 3;
 };
 
 function waitForButton(button){
-  if ((button == "nextButton" && nextButton) || (button == "char" && (button1 || button2 || button3))){
+  if ((button == "nextButton" && nextButton) || (button == "char" && charButton)){
     return;
   }else{
     setTimeout("waitForButton(button)",1000);
@@ -229,32 +231,69 @@ function startDraft(){
   for(k=players;k--;k>0){
     choices.push(null);
   }
+  var bluffs = [];
+  var Lunger = false;
+  var Hanni = false;
+  var Owl = false;
+  var Nocker = false;
   while(players>0){
-    while(true){
-      var currentPlayer = math.floor(math.random()*choices)
-      if (choices[currentPlayer] == null){
-        break
+    if (!(Owl || Nocker)){
+      while(true){
+        var currentPlayer = math.floor(math.random()*choices)
+        if (choices[currentPlayer] == null){
+          break
+        }
       }
-    }
-    
     document.getElementById("nextButton").innerHTML = "Wake Seat "+currentPlayer.toString();
     waitForButton("nextButton");
     nextButton = false;
     document.getElementById("nextButton").innerHTML = "";
+    }
+    if (!(Owl || Nocker)){
+      char1 = randomChar(typeCount,currentCount);
+      while (true){
+        char2 = randomChar(typeCount,currentCount);
+        if (char2.name != char1.name){
+          continue
+        }
+      }
+      while (true){
+        char3 = randomChar(typeCount,currentCount);
+        if (char3.name != char2.name && char3.name != char1.name){
+          continue
+        }
+      }
+    }else if (Owl){
+      char1 = randomChar([100,0,0,0],currentCount);
+      while (true){
+        char2 = randomChar([100,0,0,0],currentCount);
+        if (char2.name != char1.name){
+          continue
+        }
+      }
+      while (true){
+        char3 = randomChar([100,0,0,0],currentCount);
+        if (char3.name != char2.name && char3.name != char1.name){
+          continue
+        }
+      }
+    }else if (Nocker){
+      char1 = randomChar([0,0,100,0],currentCount);
+      while (true){
+        char2 = randomChar([0,0,100,0],currentCount);
+        if (char2.name != char1.name){
+          continue
+        }
+      }
+      while (true){
+        char3 = randomChar([0,0,100,0],currentCount);
+        if (char3.name != char2.name && char3.name != char1.name){
+          continue
+        }
+      }
+    }
+
     
-    char1 = randomChar(typeCount,currentCount);
-    while (true){
-      char2 = randomChar(typeCount,currentCount);
-      if (char2.name != char1.name){
-        continue
-      }
-    }
-    while (true){
-      char3 = randomChar(typeCount,currentCount);
-      if (char3.name != char2.name && char3.name != char1.name){
-        continue
-      }
-    }
     if (char1.name == "Bad Omen"){
       char1 = randomChar([100,0,0,0],[0,0,0,0]);
       char1.actually = "Bad Omen";
@@ -312,8 +351,93 @@ function startDraft(){
     document.getElementById("desc3").innerHTML = char1.ability;
 
     waitForButton("char");
-    // choose
-    // setup, unknownOMod, An Owl, Nocker
+
+    if (charButton == 1){
+      choices[currentPlayer] = char1;
+      bluffs.push(char2.name);
+      bluffs.push(char3.name);
+    }else if (charButton == 2){
+      choices[currentPlayer] = char2;
+      bluffs.push(char1.name);
+      bluffs.push(char3.name);
+    }else if (charButton == 3){
+      choices[currentPlayer] = char3;
+      bluffs.push(char1.name);
+      bluffs.push(char2.name);
+    }
+    var oMod = false;
+    currentChar = choices[currentPlayer];
+    if (!currentChar.actually){
+      if (currentChar.name == Lickspittle){
+        typeCount[2]--;
+        currentCount[0]++;
+      }else if (currentChar.name == "Faerie"){
+        typeCount[3]--;
+        typeCount[0]--;
+        CurrentCount[0]++;
+        typeCount[2]++;
+      }else if (currentChar.name == "Bilge Rat"){
+        typeCount[0]-= 3 - currentCount[1] - typeCount[1];
+        typeCount[1] = 3 - currentCount[1];
+        typeCount[2]--;
+        currentCount[2]++;
+      }else if (currentChar.name == "Exiled"){
+        typeCount[2]--;
+        currentCount[2]++;
+        oMod = [-1,1];
+      }else if (currentChar.name == "Folly"){
+        typeCount[2]--;
+        currentCount[2]++;
+        oMod = [0,1];
+      }else if (currentChar.name == "Kraken"){
+        typeCount[3]--;
+        currentCount[3]++;
+        oMod = [-1,1];
+      }else if (currentChar.name == "An Owl"){
+        typeCount[0]++;
+        typeCount[1]--;
+        Owl = true;
+      }else if (currentChar.name == "Nocker"){
+        typeCount[2]++;
+        typeCount[3]--;
+        Nocker = true;
+      }
+    }else{
+      if (currentChar.actually == "Bad Omen"){
+        typeCount[1]--;
+        currentCount[1]++;
+      }else if (currentChar.actually == "Hooligan"){
+        typeCount[1]--;
+        currentCount[1]++;
+      }else if (currentChar.actually == "Lunger"){
+        typeCount[2]--;
+        currentCount[2]++;
+        Lunger = true;
+      }else if (currentChar.actually == "Wendigo"){
+        typeCount[2]--;
+        currentCount[2]++;
+        typeCount[1]--;
+        typeCount[0]++;
+      }else if (currentChar.actually == "Hannibal"){
+        typeCount[3]--;
+        currentCount[3]++;
+        Hanni = true;
+      }
+    }
+    if (Owl){
+      currentChar.babysitting = "An Owl";
+      Owl = false;
+    }else if (Nocker){
+      currentChar.babysitting = "Nocker";
+      Nocker = false;
+    }
+    if (!(Nocker || Owl)){
+      document.getElementById("nextButton").innerHTML = "ST: Seat "+currentPlayer.toString()+" Chose "+currentChar.name+" (Continue)";
+      waitForButton("nextButton");
+      nextButton = false;
+      document.getElementById("nextButton").innerHTML = "";
+    }
   }
   //Illusionist, Lunger(Second), Hannibal(Second)
+  window.alert(choices);
 };
