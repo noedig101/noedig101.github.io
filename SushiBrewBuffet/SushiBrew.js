@@ -38,31 +38,31 @@ function randomChar(typeCount,currentCount){
       if (out.setup){
         if (out.name == "Faerie"){
           if (typeCount[0] < 1 || typeCount[3] < 1){
-            continue
+            continue;
           }else{
             break;
           }
         }else if (out.name == "Lickspittle"){
           if (typeCount[2] < 1){
-            continue
+            continue;
           }else{
             break;
           }
         }else if (out.name == "Bilge Rat"){
           if (typeCount[2] < 1 || currentCount[1] > 3){
-            continue
+            continue;
           }else{
             break;
           }
         }else if (out.name == "Wendigo"){
           if (typeCount[2] < 1 || typeCount[1] < 1){
-            continue
+            continue;
           }else{
             break;
           }
         }
       }else if (typeCount[out.type] < 1){
-        continue
+        continue;
       }else{
         typeCount[out.type]--;
         currentCount[out.type]++;
