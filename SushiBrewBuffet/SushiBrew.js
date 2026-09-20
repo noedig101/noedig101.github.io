@@ -258,7 +258,7 @@ async function startDraft(){
       await new Promise(r => setTimeout(r, 1000));
     }
     nextButton = false;
-    document.getElementById("nextButton").innerHTML = "";
+    document.getElementById("nextButton").innerHTML = " ";
     }
     window.alert("nextButton")
     if (!(Owl || Nocker)){
