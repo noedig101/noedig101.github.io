@@ -32,6 +32,7 @@ var charList = [];
 var choices = [];
 var bluffs = [];
 function isUnique(charName){
+  window.alert("isUnique Start")
   for(j=0;j++;j<choices.length){
     if (choices[j].name == charName){
       return false;
@@ -42,6 +43,7 @@ function isUnique(charName){
       return false;
     }
   }
+  window.alert("isUnique pass")
   return true;
 };
 
@@ -49,7 +51,7 @@ function randomChar(typeCount,currentCount){
   while(true){
       var num = math.floor(math.random()*charList.length);
       var out = charList[num];
-      //window.alert(out);
+      window.alert(out);
       if (!isUnique(out.name)){
         continue;
       }
@@ -89,7 +91,7 @@ function randomChar(typeCount,currentCount){
         break;
       }
   }
-  //window.alert("selected");
+  window.alert("selected");
   return out;
 };
 
