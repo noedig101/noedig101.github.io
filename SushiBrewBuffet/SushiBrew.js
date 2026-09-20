@@ -360,7 +360,6 @@ async function startDraft(){
     document.getElementById("desc3").innerHTML = char3.ability;
 
     charButton = false;
-    window.alert('charButton reset')
     while (!charButton){
       await new Promise(r => setTimeout(r, 1000));
     }
@@ -381,7 +380,7 @@ async function startDraft(){
     var oMod = false;
     currentChar = choices[currentPlayer];
     if (!currentChar.actually){
-      if (currentChar.name == Lickspittle){
+      if (currentChar.name == "Lickspittle"){
         typeCount[2]--;
         currentCount[0]++;
       }else if (currentChar.name == "Faerie"){
