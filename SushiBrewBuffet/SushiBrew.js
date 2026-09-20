@@ -47,7 +47,7 @@ function randomChar(typeCount,currentCount){
             break;
           }
         }else if (out.name == "Bilge Rat"){
-          if (typeCount[2] < 1 || currentCount[1] > 3){
+          if (typeCount[2] < 1 || currentCount[1] > 3 || currentCount[1] + typeCount[1] + typeCount[0] < 3){
             continue;
           }else{
             break;
@@ -65,7 +65,7 @@ function randomChar(typeCount,currentCount){
         break;
       }
   }
-  window.alert(out);
+  //window.alert(out);
   return out;
 };
 
@@ -242,9 +242,9 @@ async function startDraft(){
   while(players>1){
     if (!(Owl || Nocker)){
       while(true){
-        var currentPlayer = math.floor(math.random()*choices.length)
+        var currentPlayer = math.floor(math.random()*choices.length);
         if (choices[currentPlayer] == null){
-          break
+          break;
         }
       }
     document.getElementById("nextButton").innerHTML = "Wake Seat "+currentPlayer.toString();
@@ -387,10 +387,7 @@ async function startDraft(){
     }
     
     var oMod = false;
-    currentChar = choices[currentPlayer];
-
-    window.alert(charButton+" "+choices[currentPlayer]+" "+currentChar);
-    
+    currentChar = choices[currentPlayer];    
     if (!currentChar.actually){
       if (currentChar.name == "Lickspittle"){
         typeCount[2]--;
@@ -464,6 +461,7 @@ async function startDraft(){
       while (!nextButton){
         await new Promise(r => setTimeout(r, 1000));
       }
+      players--;
       nextButton = false;
       document.getElementById("nextButton").innerHTML = "";
     }
