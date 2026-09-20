@@ -86,6 +86,8 @@ function button3Pressed(){
   charButton = 3;
 };
 
+var types = ["Townsfolk","Outsider","Minion","Demon"];
+
 async function startDraft(){
   charList = [
     new Character("Archer",0,"You start knowing how many Minions are between you and the nearest clockwise Demon."),
@@ -351,16 +353,23 @@ async function startDraft(){
     }
 
     document.getElementById("char1").innerHTML = char1.name;
-    document.getElementById("desc1").innerHTML = char1.ability;
+    document.getElementById("desc1").innerHTML = types[char1.type]+char1.ability;
     document.getElementById("char2").innerHTML = char2.name;
-    document.getElementById("desc2").innerHTML = char2.ability;
+    document.getElementById("desc2").innerHTML = types[char2.type]+char2.ability;
     document.getElementById("char3").innerHTML = char3.name;
-    document.getElementById("desc3").innerHTML = char3.ability;
+    document.getElementById("desc3").innerHTML = types[char3.type]+char3.ability;
 
     charButton = false;
     while (!charButton){
       await new Promise(r => setTimeout(r, 1000));
     }
+
+    document.getElementById("char1").innerHTML = "";
+    document.getElementById("desc1").innerHTML = "";
+    document.getElementById("char2").innerHTML = "";
+    document.getElementById("desc2").innerHTML = "";
+    document.getElementById("char3").innerHTML = "";
+    document.getElementById("desc3").innerHTML = "";
 
     if (charButton == 1){
       choices[currentPlayer] = char1;
