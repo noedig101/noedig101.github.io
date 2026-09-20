@@ -86,7 +86,7 @@ function startDraft(){
   var charList = [
     new Character("Archer",0,"You start knowing how many Minions are between you and the nearest clockwise Demon."),
     new Character("Archivist",0,"Each day, you may visit the Storyteller & privately ask a yes/no question about the Demon's ability."),
-    new Character("Blacksmith",0,"The 1st time the Demon kills you, you live & gain a not-in-play Townsfolk ability.")
+    new Character("Blacksmith",0,"The 1st time the Demon kills you, you live & gain a not-in-play Townsfolk ability."),
     new Character("Boatswain",0,"You start knowing the largest number of good players neighboring each other."),
     new Character("Bookbinder",0,"You start knowing a not-in-play Townsfolk. While you are \"mad\" that you are that character, you cannot die.",false,["Deacon"]),
     new Character("Buccaneer",0,"Each night*, choose 2 players (not yourself): if they are different alignments, you die."),
