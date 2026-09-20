@@ -418,7 +418,7 @@ async function startDraft(){
       }else if (currentChar.name == "Faerie"){
         typeCount[3]--;
         typeCount[0]--;
-        CurrentCount[0]++;
+        currentCount[0]++;
         typeCount[2]++;
       }else if (currentChar.name == "Bilge Rat"){
         typeCount[0]-= 3 - currentCount[1] - typeCount[1];
