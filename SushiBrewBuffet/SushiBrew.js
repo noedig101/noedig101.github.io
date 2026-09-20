@@ -353,7 +353,7 @@ async function startDraft(){
 
     var types = ["Townsfolk","Outsider","Minion","Demon"];
 
-    window.alert(char1.type);
+    
     document.getElementById("char1").innerHTML = char1.name;
     document.getElementById("desc1").innerHTML = types[char1.type]+": "+char1.ability;
     document.getElementById("char2").innerHTML = char2.name;
@@ -386,6 +386,9 @@ async function startDraft(){
       bluffs.push(char1.name);
       bluffs.push(char2.name);
     }
+
+    window.alert(charButton+" "+choices[currentPlayer]);
+    
     var oMod = false;
     currentChar = choices[currentPlayer];
     if (!currentChar.actually){
