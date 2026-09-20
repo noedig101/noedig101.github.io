@@ -40,6 +40,7 @@ function isUnique(charName){
   for(j=0;j++;j<bluffs.length){
     if (bluffs[j] == charName){
       return false;
+    }
   }
   return true;
 };
