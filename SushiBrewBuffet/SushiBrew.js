@@ -240,7 +240,7 @@ async function startDraft(){
   var Hanni = false;
   var Owl = false;
   var Nocker = false;
-  while(players>0){
+  while(players>1){
     if (!(Owl || Nocker)){
       while(true){
         var currentPlayer = math.floor(math.random()*choices.length)
