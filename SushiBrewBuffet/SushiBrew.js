@@ -88,7 +88,7 @@ function button3Pressed(){
   charButton = 3;
 };
 
-function startDraft(){
+async function startDraft(){
   charList = [
     new Character("Archer",0,"You start knowing how many Minions are between you and the nearest clockwise Demon."),
     new Character("Archivist",0,"Each day, you may visit the Storyteller & privately ask a yes/no question about the Demon's ability."),
