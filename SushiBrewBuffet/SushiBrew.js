@@ -304,50 +304,65 @@ async function startDraft(){
     if (char1.name == "Bad Omen"){
       char1 = randomChar([100,0,0,0],[0,0,0,0]);
       char1.actually = "Bad Omen";
+      window.alert("1");
     }else if (char1.name == "Hooligan"){
       char1 = randomChar([0,0,100,0],[0,0,0,0]);
       char1.actually = "Hooligan";
+      window.alert("1");
     }else if (char1.name == "Lunger"){
       char1 = randomChar([100,100,0,0],[0,0,0,0]);
       char1.actually = "Lunger";
+      window.alert("1");
     }else if (char1.name == "Wendigo"){
       char1 = randomChar([100,100,0,0]);
       char1.actually = "Wendigo";
+      window.alert("1");
     }else if (char1.name == "Hannibal"){
       char1 = randomChar([100,100,0,0],[0,0,0,0]);
       char1.actually = "Hannibal";
+      window.alert("1");
     }
     if (char2.name == "Bad Omen"){
       char2 = randomChar([100,0,0,0],[0,0,0,0]);
       char2.actually = "Bad Omen";
+      window.alert("2");
     }else if (char2.name == "Hooligan"){
       char2 = randomChar([0,0,100,0],[0,0,0,0]);
       char2.actually = "Hooligan";
+      window.alert("2");
     }else if (char2.name == "Lunger"){
       char2 = randomChar([100,100,0,0],[0,0,0,0]);
       char2.actually = "Lunger";
+      window.alert("2");
     }else if (char2.name == "Wendigo"){
       char2 = randomChar([100,100,0,0]);
       char2.actually = "Wendigo";
+      window.alert("2");
     }else if (char2.name == "Hannibal"){
       char2 = randomChar([100,100,0,0],[0,0,0,0]);
       char2.actually = "Hannibal";
+      window.alert("2");
     }
     if (char3.name == "Bad Omen"){
       char3 = randomChar([100,0,0,0],[0,0,0,0]);
       char3.actually = "Bad Omen";
+      window.alert("3");
     }else if (char3.name == "Hooligan"){
       char3 = randomChar([0,0,100,0],[0,0,0,0]);
       char3.actually = "Hooligan";
+      window.alert("3");
     }else if (char3.name == "Lunger"){
       char3 = randomChar([100,100,0,0],[0,0,0,0]);
       char3.actually = "Lunger";
+      window.alert("3");
     }else if (char3.name == "Wendigo"){
       char3 = randomChar([100,100,0,0]);
       char3.actually = "Wendigo";
+      window.alert("3");
     }else if (char3.name == "Hannibal"){
       char3 = randomChar([100,100,0,0],[0,0,0,0]);
       char3.actually = "Hannibal";
+      window.alert("3");
     }
 
     var types = ["Townsfolk","Outsider","Minion","Demon"];
