@@ -15,7 +15,7 @@ function decPlayer(){
 class Character {
   constructor(name, type, ability, setup = false, jinxes = false){
     this.name = name;
-    this.team = type;
+    this.type = type;
     this.ability = ability;
     this.setup = setup;
     this.jinxes = jinxes;
