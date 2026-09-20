@@ -7,9 +7,9 @@ function incPlayer(){
 
 function decPlayer(){
   var player = Number(document.getElementById("player").innerHTML)
-  console.log(player);
+  window.alert(player);
   if(player > 5){
-    console.log("test good");
+    window.alert("test good");
     document.getElementById("player").innerHTML = (player-1).toString();
   }
 };
