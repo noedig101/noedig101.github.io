@@ -265,6 +265,7 @@ function startDraft(){
     nextButton = false;
     document.getElementById("nextButton").innerHTML = "";
     }
+    window.alert("nextButton")
     if (!(Owl || Nocker)){
       char1 = randomChar(typeCount,currentCount);
       while (true){
