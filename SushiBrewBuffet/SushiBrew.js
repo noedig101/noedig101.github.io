@@ -31,8 +31,7 @@ var charList = [];
 
 function randomChar(typeCount,currentCount){
   while(true){
-      //var num = math.floor(math.random()*charList.length);
-      var num = 24;
+      var num = math.floor(math.random()*charList.length);
       var out = charList[num];
       window.alert(out);
       if (out.setup){
