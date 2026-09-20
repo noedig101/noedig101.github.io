@@ -353,11 +353,11 @@ async function startDraft(){
     var types = ["Townsfolk","Outsider","Minion","Demon"];
 
     
-    document.getElementById("char1").innerHTML = char1.name;
+    document.getElementById("char1").innerHTML = char1;
     document.getElementById("desc1").innerHTML = types[char1.type]+": "+char1.ability;
-    document.getElementById("char2").innerHTML = char2.name;
+    document.getElementById("char2").innerHTML = char2;
     document.getElementById("desc2").innerHTML = types[char2.type]+": "+char2.ability;
-    document.getElementById("char3").innerHTML = char3.name;
+    document.getElementById("char3").innerHTML = char3;
     document.getElementById("desc3").innerHTML = types[char3.type]+": "+char3.ability;
 
     charButton = false;
