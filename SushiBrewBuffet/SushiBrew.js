@@ -13,8 +13,8 @@ function decPlayer(){
 };
 
 class Character {
-  var actually = false;
-  var babysitting = false;
+  actually = false;
+  babysitting = false;
   constructor(name, type, ability, setup = false, jinxes = false){
     this.name = name;
     this.team = type;
