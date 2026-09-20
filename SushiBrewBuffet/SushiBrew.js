@@ -443,7 +443,10 @@ async function startDraft(){
     }
     if (!(Nocker || Owl)){
       document.getElementById("nextButton").innerHTML = "ST: Seat "+currentPlayer.toString()+" Chose "+currentChar.name+" (Continue)";
-      waitForButton("nextButton");
+      nextButton = false;
+      while (!nextButton){
+        await new Promise(r => setTimeout(r, 1000));
+      }
       nextButton = false;
       document.getElementById("nextButton").innerHTML = "";
     }
