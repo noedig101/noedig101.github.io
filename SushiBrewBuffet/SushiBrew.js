@@ -23,7 +23,7 @@ class Character {
     this.babysitting = false;
   }
   toString(){
-    return this.actually ? this.actually+"/"this.name : this.babysitting ? this.name+"/"+this.babysitting : this.name;
+    return this.actually ? this.actually+"/"+this.name : this.babysitting ? this.name+"/"+this.babysitting : this.name;
   }
 }
 
@@ -240,7 +240,6 @@ async function startDraft(){
   var Owl = false;
   var Nocker = false;
   while(players>0){
-    window.alert(players);
     if (!(Owl || Nocker)){
       while(true){
         var currentPlayer = math.floor(math.random()*choices.length);
