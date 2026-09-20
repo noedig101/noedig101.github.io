@@ -34,7 +34,7 @@ function randomChar(typeCount,currentCount){
       var num = math.floor(math.random()*charList.length);
       window.alert(num);
       var out = charList[num];
-      window.alert(out);
+
       if (out.setup){
         if (out.name == "Faerie"){
           if (typeCount[0] < 1 || typeCount[3] < 1){
@@ -87,7 +87,7 @@ function waitForButton(button){
 };
 
 function startDraft(){
-  var charList = [
+  charList = [
     new Character("Archer",0,"You start knowing how many Minions are between you and the nearest clockwise Demon."),
     new Character("Archivist",0,"Each day, you may visit the Storyteller & privately ask a yes/no question about the Demon's ability."),
     new Character("Blacksmith",0,"The 1st time the Demon kills you, you live & gain a not-in-play Townsfolk ability."),
