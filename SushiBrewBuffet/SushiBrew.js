@@ -86,7 +86,6 @@ function button3Pressed(){
   charButton = 3;
 };
 
-var types = ["Townsfolk","Outsider","Minion","Demon"];
 
 async function startDraft(){
   charList = [
@@ -352,6 +351,8 @@ async function startDraft(){
       char3.actually = "Hannibal";
     }
 
+    var types = ["Townsfolk","Outsider","Minion","Demon"];
+    
     document.getElementById("char1").innerHTML = char1.name;
     document.getElementById("desc1").innerHTML = types[char1.type]+char1.ability;
     document.getElementById("char2").innerHTML = char2.name;
