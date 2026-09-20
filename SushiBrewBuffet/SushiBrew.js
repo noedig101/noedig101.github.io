@@ -92,7 +92,9 @@ function waitForButton(button){
   if ((button == "nextButton" && nextButton) || (button == "char" && charButton)){
     return;
   }else{
+    window.alert("before wait");
     setTimeout("waitForButton(button)",1000);
+    window.alert("after all waiting");
   }
 };
 
