@@ -33,6 +33,7 @@ function randomChar(typeCount,currentCount){
   while(true){
       var num = math.floor(math.random()*charList.length);
       var out = charList[num];
+      window.alert(out);
       if (out.setup){
         if (out.name == "Faerie"){
           if (typeCount[0] < 1 || typeCount[3] < 1){
@@ -65,7 +66,7 @@ function randomChar(typeCount,currentCount){
         break;
       }
   }
-  //window.alert(out);
+  window.alert("selected");
   return out;
 };
 
