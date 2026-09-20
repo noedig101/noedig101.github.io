@@ -62,8 +62,6 @@ function randomChar(typeCount,currentCount){
       }else if (typeCount[out.type] < 1){
         continue;
       }else{
-        typeCount[out.type]--;
-        currentCount[out.type]++;
         break;
       }
   }
@@ -425,6 +423,9 @@ async function startDraft(){
         typeCount[2]++;
         typeCount[3]--;
         Nocker = true;
+      }else{
+        typeCount[currentChar.type]--;
+        currentCount[currentChar.type]++;
       }
     }else{
       if (currentChar.actually == "Bad Omen"){
