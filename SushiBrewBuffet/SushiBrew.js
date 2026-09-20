@@ -385,11 +385,12 @@ async function startDraft(){
       bluffs.push(char1.name);
       bluffs.push(char2.name);
     }
-
-    window.alert(charButton+" "+choices[currentPlayer]);
     
     var oMod = false;
     currentChar = choices[currentPlayer];
+
+    window.alert(charButton+" "+choices[currentPlayer]+" "+currentChar);
+    
     if (!currentChar.actually){
       if (currentChar.name == "Lickspittle"){
         typeCount[2]--;
