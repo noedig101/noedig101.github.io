@@ -66,6 +66,7 @@ function randomChar(typeCount,currentCount){
       }else{
         typeCount[out.type]--;
         currentCount[out.type]++;
+        window.alert("returning...");
         return out;
       }
   }
