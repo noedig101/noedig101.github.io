@@ -13,14 +13,14 @@ function decPlayer(){
 };
 
 class Character {
-  actually = false;
-  babysitting = false;
   constructor(name, type, ability, setup = false, jinxes = false){
     this.name = name;
     this.team = type;
     this.ability = ability;
     this.setup = setup;
     this.jinxes = jinxes;
+    actually = false;
+    babysitting = false;
   }
   toString(){
     return this.name;
