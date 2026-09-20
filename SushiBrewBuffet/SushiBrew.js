@@ -27,6 +27,8 @@ class Character {
   }
 }
 
+var charList;
+
 function randomChar(typeCount,currentCount){
   while(true){
       var num = math.floor(math.random()*charList.length);
