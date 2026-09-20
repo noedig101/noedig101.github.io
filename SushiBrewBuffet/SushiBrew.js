@@ -65,6 +65,7 @@ function randomChar(typeCount,currentCount){
         break;
       }
   }
+  window.alert(out);
   return out;
 };
 
