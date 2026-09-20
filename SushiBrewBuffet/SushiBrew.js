@@ -88,16 +88,6 @@ function button3Pressed(){
   charButton = 3;
 };
 
-function waitForButton(){
-  if (button == "nextButton" && nextButton){
-    return;
-  }else{
-    window.alert("before wait");
-    setTimeout(waitForButton,1000);
-    window.alert("after all waiting");
-  }
-};
-
 function startDraft(){
   charList = [
     new Character("Archer",0,"You start knowing how many Minions are between you and the nearest clockwise Demon."),
@@ -263,7 +253,10 @@ function startDraft(){
       }
     window.alert(currentPlayer)
     document.getElementById("nextButton").innerHTML = "Wake Seat "+currentPlayer.toString();
-    waitForButton("nextButton");
+    nextButton = false;
+    while (!nextButton){
+      await new Promise(r => setTimeout(r, 1000));
+    }
     nextButton = false;
     document.getElementById("nextButton").innerHTML = "";
     }
@@ -369,7 +362,10 @@ function startDraft(){
     document.getElementById("char3").innerHTML = char1.name;
     document.getElementById("desc3").innerHTML = char1.ability;
 
-    waitForButton("char");
+    charButton = false;
+    while (!charButton){
+      await new Promise(r => setTimeout(r, 2000));
+    }
 
     if (charButton == 1){
       choices[currentPlayer] = char1;
