@@ -60,6 +60,10 @@ function randomChar(typeCount,currentCount){
           }else{
             break;
           }
+        }else if(typeCount[out.type] < 1){
+          continue;
+        }else{
+          break;
         }
       }else if (typeCount[out.type] < 1){
         continue;
