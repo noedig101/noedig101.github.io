@@ -88,12 +88,12 @@ function button3Pressed(){
   charButton = 3;
 };
 
-function waitForButton(button){
-  if ((button == "nextButton" && nextButton) || (button == "char" && charButton)){
+function waitForButton(){
+  if (button == "nextButton" && nextButton){
     return;
   }else{
     window.alert("before wait");
-    setTimeout("waitForButton(button)",1000);
+    setTimeout(waitForButton,1000);
     window.alert("after all waiting");
   }
 };
