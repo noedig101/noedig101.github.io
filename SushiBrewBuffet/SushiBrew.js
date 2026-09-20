@@ -267,13 +267,13 @@ async function startDraft(){
       while (true){
         char2 = randomChar(typeCount,currentCount);
         if (char2.name != char1.name){
-          continue
+          break;
         }
       }
       while (true){
         char3 = randomChar(typeCount,currentCount);
         if (char3.name != char2.name && char3.name != char1.name){
-          continue
+          break;
         }
       }
     }else if (Owl){
