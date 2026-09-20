@@ -240,6 +240,7 @@ async function startDraft(){
   var Owl = false;
   var Nocker = false;
   while(players>1){
+    window.alert(players);
     if (!(Owl || Nocker)){
       while(true){
         var currentPlayer = math.floor(math.random()*choices.length);
@@ -255,7 +256,7 @@ async function startDraft(){
     nextButton = false;
     document.getElementById("nextButton").innerHTML = " ";
     }
-    window.alert(typeCount);
+    //window.alert(typeCount);
     if (!(Owl || Nocker)){
       char1 = randomChar(typeCount,currentCount);
       while (true){
