@@ -19,8 +19,8 @@ class Character {
     this.ability = ability;
     this.setup = setup;
     this.jinxes = jinxes;
-    actually = false;
-    babysitting = false;
+    this.actually = false;
+    this.babysitting = false;
   }
   toString(){
     return this.name;
