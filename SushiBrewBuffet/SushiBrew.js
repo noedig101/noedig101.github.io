@@ -243,7 +243,7 @@ function startDraft(){
   while(players>0){
     if (!(Owl || Nocker)){
       while(true){
-        var currentPlayer = math.floor(math.random()*choices)
+        var currentPlayer = math.floor(math.random()*choices.length)
         if (choices[currentPlayer] == null){
           break
         }
