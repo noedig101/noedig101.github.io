@@ -248,7 +248,6 @@ async function startDraft(){
           break
         }
       }
-    window.alert(currentPlayer)
     document.getElementById("nextButton").innerHTML = "Wake Seat "+currentPlayer.toString();
     nextButton = false;
     while (!nextButton){
@@ -257,7 +256,6 @@ async function startDraft(){
     nextButton = false;
     document.getElementById("nextButton").innerHTML = " ";
     }
-    window.alert("nextButton")
     if (!(Owl || Nocker)){
       char1 = randomChar(typeCount,currentCount);
       while (true){
