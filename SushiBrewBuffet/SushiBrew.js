@@ -56,12 +56,24 @@ function randomChar(typeCount,currentCount){
 };
 
 nextButton = false;
+button1 = false;
+button2 = false;
+button3 = false;
 function nextButtonPressed(){
   nextButton = true
 };
+function button1Pressed(){
+  button1 = true
+};
+function button2Pressed(){
+  button2 = true
+};
+function button2Pressed(){
+  button1 = true
+};
 
 function waitForButton(button){
-  if ((button == "nextButton" && nextButton)){
+  if ((button == "nextButton" && nextButton) || (button == "char" && (button1 || button2 || button3))){
     return;
   }else{
     setTimeout("waitForButton(button)",1000);
@@ -227,6 +239,8 @@ function startDraft(){
     
     document.getElementById("nextButton").innerHTML = "Wake Seat "+currentPlayer.toString();
     waitForButton("nextButton");
+    nextButton = false;
+    document.getElementById("nextButton").innerHTML = "";
     
     char1 = randomChar(typeCount,currentCount);
     while (true){
@@ -289,6 +303,15 @@ function startDraft(){
       char3 = randomChar([100,100,0,0],[0,0,0,0]);
       char3.actually = "Hannibal";
     }
+
+    document.getElementById("char1").innerHTML = char1.name;
+    document.getElementById("desc1").innerHTML = char1.ability;
+    document.getElementById("char2").innerHTML = char1.name;
+    document.getElementById("desc2").innerHTML = char1.ability;
+    document.getElementById("char3").innerHTML = char1.name;
+    document.getElementById("desc3").innerHTML = char1.ability;
+
+    waitForButton("char");
     // choose
     // setup, unknownOMod, An Owl, Nocker
   }
