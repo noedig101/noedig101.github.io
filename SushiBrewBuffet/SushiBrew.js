@@ -239,7 +239,7 @@ async function startDraft(){
   var Hanni = false;
   var Owl = false;
   var Nocker = false;
-  while(players>1){
+  while(players>0){
     window.alert(players);
     if (!(Owl || Nocker)){
       while(true){
