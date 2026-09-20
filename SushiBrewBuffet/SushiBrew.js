@@ -468,10 +468,10 @@ async function startDraft(){
         Hanni = true;
       }
     }
-    if (Owl){
+    if (Owl && currentChar.name != "An Owl"){
       currentChar.babysitting = "An Owl";
       Owl = false;
-    }else if (Nocker){
+    }else if (Nocker && currentChar.name != "Nocker"){
       currentChar.babysitting = "Nocker";
       Nocker = false;
     }
