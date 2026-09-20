@@ -32,7 +32,6 @@ var charList = [];
 function randomChar(typeCount,currentCount){
   while(true){
       var num = math.floor(math.random()*charList.length);
-      window.alert(num);
       var out = charList[num];
       window.alert(out);
       if (out.setup){
@@ -69,7 +68,6 @@ function randomChar(typeCount,currentCount){
         break;
       }
   }
-  window.alert("returning...");
   return out;
 };
 
@@ -212,7 +210,6 @@ async function startDraft(){
     new Character("Woehelm",3,"Each night*, choose 2 players: if they vote, they die. If no one died today, non-Demons chosen at night die."),
     new Character("Yng",3,"Each night*, choose a player: they die. If only 3 non-Traveller players live, you die if & only if your clockwise living neighbor is executed. 1 good player knows you're in play.")
   ];
-  window.alert("charList init")
   var players = Number(document.getElementById("player").innerHTML);
   var typeCount = [
     null,
@@ -263,17 +260,14 @@ async function startDraft(){
     window.alert("nextButton")
     if (!(Owl || Nocker)){
       char1 = randomChar(typeCount,currentCount);
-      window.alert("Returned! 1");
       while (true){
         char2 = randomChar(typeCount,currentCount);
-        window.alert("Returned! 2");
         if (char2.name != char1.name){
           break;
         }
       }
       while (true){
         char3 = randomChar(typeCount,currentCount);
-        window.alert("Returned! 3");
         if (char3.name != char2.name && char3.name != char1.name){
           break;
         }
@@ -366,8 +360,9 @@ async function startDraft(){
     document.getElementById("desc3").innerHTML = char3.ability;
 
     charButton = false;
+    window.alert('charButton reset')
     while (!charButton){
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1000));
     }
 
     if (charButton == 1){
