@@ -209,6 +209,7 @@ function startDraft(){
     new Character("Woehelm",3,"Each night*, choose 2 players: if they vote, they die. If no one died today, non-Demons chosen at night die."),
     new Character("Yng",3,"Each night*, choose a player: they die. If only 3 non-Traveller players live, you die if & only if your clockwise living neighbor is executed. 1 good player knows you're in play.")
   ];
+  window.alert("charList init")
   var players = Number(document.getElementById("player").innerHTML);
   var typeCount = [
     null,
@@ -247,6 +248,7 @@ function startDraft(){
           break
         }
       }
+    window.alert(currentPlayer)
     document.getElementById("nextButton").innerHTML = "Wake Seat "+currentPlayer.toString();
     waitForButton("nextButton");
     nextButton = false;
