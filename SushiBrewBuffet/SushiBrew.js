@@ -34,31 +34,31 @@ function randomChar(typeCount,currentCount){
       var num = math.floor(math.random()*charList.length);
       window.alert(num);
       var out = charList[num];
-
+      window.alert(out);
       if (out.setup){
         if (out.name == "Faerie"){
           if (typeCount[0] < 1 || typeCount[3] < 1){
             continue
           }else{
-            break
+            return out;
           }
         }else if (out.name == "Lickspittle"){
           if (typeCount[2] < 1){
             continue
           }else{
-            break
+            return out;
           }
         }else if (out.name == "Bilge Rat"){
           if (typeCount[2] < 1 || currentCount[1] > 3){
             continue
           }else{
-            break
+            return out;
           }
         }else if (out.name == "Wendigo"){
           if (typeCount[2] < 1 || typeCount[1] < 1){
             continue
           }else{
-            break
+            return out;
           }
         }
       }else if (typeCount[out.type] < 1){
@@ -66,7 +66,7 @@ function randomChar(typeCount,currentCount){
       }else{
         typeCount[out.type]--;
         currentCount[out.type]++;
-        break
+        return out;
       }
   }
   return out;
