@@ -29,11 +29,29 @@ class Character {
 
 var charList = [];
 
+var choices = [];
+var bluffs = [];
+function isUnique(charName){
+  for(j=0;j++;j<choices.length){
+    if (choices[j].name == charName){
+      return false;
+    }
+  }
+  for(j=0;j++;j<bluffs.length){
+    if (bluffs[j] == charName){
+      return false;
+  }
+  return true;
+};
+
 function randomChar(typeCount,currentCount){
   while(true){
       var num = math.floor(math.random()*charList.length);
       var out = charList[num];
       window.alert(out);
+      if (!isUnique(out.name)){
+        continue;
+      }
       if (out.setup){
         if (out.name == "Faerie"){
           if (typeCount[0] < 1 || typeCount[3] < 1){
@@ -88,7 +106,6 @@ function button2Pressed(){
 function button3Pressed(){
   charButton = 3;
 };
-
 
 async function startDraft(){
   charList = [
@@ -235,11 +252,11 @@ async function startDraft(){
   ];
   typeCount = typeCount[players];
   currentCount = [0,0,0,0];
-  var choices = [];
+  choices = [];
   for(k=players;k--;k>0){
     choices.push(null);
   }
-  var bluffs = [];
+  bluffs = [];
   var Lunger = false;
   var Hanni = false;
   var Owl = false;
