@@ -37,14 +37,12 @@ function isUnique(char){
     if(choices[j] == null){
       continue;
     }
-    window.alert(choices[j]+" "+char);
     if (choices[j].name == char){
       return false;
     }
   }
   window.alert(bluffs);
   for(j in bluffs){
-    window.alert(bluffs[j]+" "+char);
     if (bluffs[j] == char){
       return false;
     }
