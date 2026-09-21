@@ -34,12 +34,14 @@ var bluffs = [];
 function isUnique(char){
   window.alert(choices);
   for(j=0;j++;j>=choices.length){
+    window.alert(choices[j]+" "+char.name);
     if (choices[j].name == char.name){
       return false;
     }
   }
   window.alert(bluffs);
   for(j=0;j++;j>=bluffs.length){
+    window.alert(bluffs[j]+" "+char.name);
     if (bluffs[j] == char.name){
       return false;
     }
