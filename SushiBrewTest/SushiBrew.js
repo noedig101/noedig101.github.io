@@ -33,14 +33,14 @@ var choices = [];
 var bluffs = [];
 function isUnique(char){
   window.alert(choices);
-  for(j=0;j++;j>=choices.length){
+  for(j=0;j<choices.length;j++){
     window.alert(choices[j]+" "+char.name);
     if (choices[j].name == char.name){
       return false;
     }
   }
   window.alert(bluffs);
-  for(j=0;j++;j>=bluffs.length){
+  for(j=0;j<bluffs.length;j++){
     window.alert(bluffs[j]+" "+char.name);
     if (bluffs[j] == char.name){
       return false;
