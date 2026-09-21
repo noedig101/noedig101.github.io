@@ -34,7 +34,9 @@ var bluffs = [];
 function isUnique(char){
   window.alert(choices);
   for(j in choices){
-    if()
+    if(choices[j] == null){
+      continue;
+    }
     window.alert(choices[j]+" "+char);
     if (choices[j].name == char){
       return false;
