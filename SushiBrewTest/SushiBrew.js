@@ -40,6 +40,7 @@ function isUnique(char){
   }
   window.alert(bluffs);
   for(j=0;j++;j<bluffs.length){
+    window.alert(bluffs[j]+" "+char.name);
     if (bluffs[j] == char.name){
       return false;
     }
