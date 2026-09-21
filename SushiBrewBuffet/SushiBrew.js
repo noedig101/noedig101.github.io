@@ -31,17 +31,23 @@ var charList = [];
 
 var choices = [];
 var bluffs = [];
-function isUnique(charName){
-  for(j=0;j++;j<choices.length){
-    if (choices[j].name == charName){
+function isUnique(char){
+  //window.alert(choices);
+  for(j in choices){
+    if(choices[j] == null){
+      continue;
+    }
+    if (choices[j].name == char){
       return false;
     }
   }
-  for(j=0;j++;j<bluffs.length){
-    if (bluffs[j] == charName){
+  //window.alert(bluffs);
+  for(j in bluffs){
+    if (bluffs[j] == char){
       return false;
     }
   }
+  //window.alert("isUnique passed");
   return true;
 };
 
